@@ -28,6 +28,20 @@ void moverBispo(int verticais, int horizontais) {
     }
 }
 
+// Movimento do cavalo usando loops aninhados + break/continue
+void moverCavalo() {
+    for (int i = 0; i < 2; i++) {
+        printf("Baixo\n");
+    }
+
+    for (int j = 0; j < 2; j++) {
+        if (j == 1) {
+            break; // Sai depois de uma casa pra Direita
+        }
+        printf("Direita\n");
+    }
+}
+
 int main() {
     int escolha;
 
@@ -58,28 +72,9 @@ int main() {
                 break;
 
             case 4:
-                // Faz o Cavalo mover em L: duas casas para baixo e uma para a direita
                 printf("\nMovimento do Cavalo:\n");
-                for (int i = 0; i < 2; i++) {
-                    for (int j = 0; j < 1; j++) { 
-                        if (i == 0 && j == 0) {
-                            printf("\nBaixo\n");
-                            continue;  // Apenas para demonstrar uso do continue
-                        }
-                        printf("Baixo\n");
-                    }
-                }
-
-                // Agora uma casa para direita com break só pra mostrar habilidade
-                for (int k = 0; k < 2; k++) {
-                    if (k == 1) {
-                        break;  // Sai antes de imprimir duas vezes
-                    }
-                    printf("Direita\n");
-                }
-
+                moverCavalo(); // Move 2 casas pra baixo e 1 para direita
                 break;
-
 
             default:
                 printf("Opção inválida! Tente novamente.\n");
